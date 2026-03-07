@@ -23,7 +23,11 @@ class Time{
     }
 
     void showtime(){
-        cout<<"The sum is: "<< hh <<"Hours" " " << mm << "Minutes" " " << ss <<"Seconds";
+        cout<<"The sum is: "<< hh <<"Hours" " " << mm << "Minutes" " " << ss <<"Seconds"<<endl;
+    }
+
+    void diftime(){
+        cout<<"The diff is: "<< hh <<"Hours" " " << mm << "Minutes" " " << ss <<"Seconds"<<endl;
     }
 
     Time addition(Time t1, Time t2){
@@ -44,16 +48,35 @@ class Time{
         return temp;
     }
 
+    Time subtraction(Time t1, Time t2){
+        Time temp;
+        temp.hh = t1.hh - t2.hh;
+        temp.mm = t1.mm - t2.mm;
+        temp.ss = t1.ss - t2.ss;
+        while(temp.ss>=60){
+            temp.ss-=60;
+            temp.mm++;
+        }
+
+        while(temp.mm>=60){
+            temp.mm-=60; 
+            temp.hh++;
+        }
+
+        return temp;
+    }
 };
 
 int main() {
-    Time t1, t2, sum;
+    Time t1, t2, sum, diff;
 
     t1.get_details();
     t2.get_details();
 
-    sum = sum.addition(t1, t2);   
+    sum = sum.addition(t1, t2); 
+    diff = diff.subtraction(t1,t2);  
     sum.showtime();
+    diff.diftime();
 
     return 0;
 }
