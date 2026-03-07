@@ -3,7 +3,7 @@
 #include<iostream>
 using namespace std;
 
-class students{
+class Students{
     char name[20];
     int roll_no;
     char grade[10];
@@ -12,27 +12,30 @@ class students{
     void op_data();
 };
 
-void students::ip_data(){
+void Students::ip_data(){
     cout<<"Enter name, roll_no, grade:"<<endl;
     cin>>name>>roll_no>>grade;
 }
 
-void students::op_data(){
-    cout<<"The details of students are:"<<endl;
+void Students::op_data(){
     cout<<"Name:"<<name<<endl;
     cout<<"Roll_no:"<<roll_no<<endl;
     cout<<"Grade:"<<grade<<endl;
 }
 
 int main(){
-    students s[5];
-    int n;
+    Students s[15];
+    int n, i=0;
     cout<<"Enter the number of students:";
     cin>>n;
-    int i=0;
     for(i=0;i<n;i++){
-    s[i].ip_data();
-    s[i].op_data(); 
+        cout<<"Enter the details of "<<i+1<<" student"<<endl;
+        s[i].ip_data();
+    }
+
+    for (i=0; i<n; i++){
+        cout<<"The details of "<< i+1 <<" student:"<<endl;
+        s[i].op_data(); 
     }
     return 0;
 }
