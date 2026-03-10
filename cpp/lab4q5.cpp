@@ -43,6 +43,6 @@ int main(){
     d1.input();
     d2.input();
     d3 = d3.addition(d1,d2);
-    d2.show_details();
+    d3.show_details();
     return 0;
 }
