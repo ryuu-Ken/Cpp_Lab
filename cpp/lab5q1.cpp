@@ -42,13 +42,13 @@ int main(){
     currency c1(22,2), c2(999,9);
     cout<<"Before prefix increment"<<endl;
     c1.showdeatils();
-    c1++;
-    cout<<"After prefix increment: "<<endl;
+    ++c1;
+    cout<<"After prefix increment"<<endl;
     c1.showdeatils();
-    cout<<"Before postix inccrement"<<endl;
+    cout<<"Before postfix inccrement"<<endl;
     c2.showdeatils();
-    ++c2;
-    cout<<"After postfix increment: "<<endl;
+    c2++;
+    cout<<"After postfix increment "<<endl;
     c2.showdeatils();
     return 0;
 }
